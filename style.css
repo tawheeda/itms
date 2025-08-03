@@ -203,6 +203,7 @@ main {
 .hero-content {
     padding: 0 20px;
     max-width: 800px;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 }
 
 .hero-content h1 {
@@ -601,5 +602,20 @@ footer p {
     .cta-button {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+    /* --- Hero Section Mobile Adjustments --- */
+    .hero {
+        height: 250px; /* Further reduce hero height for very small screens */
+    }
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller font for h1 */
+        line-height: 1.3;
+    }
+    .hero-content p {
+        font-size: 0.9rem; /* Smaller font for p */
+        margin-bottom: 20px; /* Reduce bottom margin */
+    }
+    .hero-content {
+        padding: 0 15px; /* Adjust horizontal padding for very small screens */
     }
 }
