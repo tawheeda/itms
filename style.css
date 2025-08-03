@@ -230,8 +230,8 @@ main {
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block; /* Ensure padding works correctly */
-    animation: scaleIn 0.8s ease-out 0.8s forwards; /* Apply animation with delay */
-    opacity: 0; /* Start hidden */
+    animation: scaleIn 0.8s ease-out forwards; /* Apply animation */
+    /* Removed animation-delay and opacity: 0; to ensure immediate visibility */
 }
 
 .cta-button:hover {
@@ -605,17 +605,22 @@ footer p {
     }
     /* --- Hero Section Mobile Adjustments --- */
     .hero {
-        height: 250px; /* Further reduce hero height for very small screens */
+        height: 220px; /* Further reduce hero height for very small screens */
     }
     .hero-content h1 {
-        font-size: 1.8rem; /* Smaller font for h1 */
+        font-size: 1.6rem; /* Even smaller font for h1 */
         line-height: 1.3;
+        margin-bottom: 10px; /* Reduce margin */
     }
     .hero-content p {
-        font-size: 0.9rem; /* Smaller font for p */
-        margin-bottom: 20px; /* Reduce bottom margin */
+        font-size: 0.8rem; /* Even smaller font for p */
+        margin-bottom: 15px; /* Reduce bottom margin */
     }
     .hero-content {
-        padding: 0 15px; /* Adjust horizontal padding for very small screens */
+        padding: 0 10px; /* Adjust horizontal padding for very small screens */
+    }
+    .cta-button {
+        padding: 10px 20px; /* Ensure button is not too large */
+        font-size: 0.85rem;
     }
 }
