@@ -316,6 +316,18 @@ footer p {
     font-size: 0.9em;
 }
 
+/* New styles for the link in the footer */
+footer p a {
+    color: var(--teal); /* Matches your active link/accent color */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Makes the text bold */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+footer p a:hover {
+    color: var(--lime-green); /* Example: changes color on hover, similar to other links */
+}
+
 /* --- Contact Page Specific Styles --- */
 .map-container {
     width: 100%;
@@ -622,5 +634,138 @@ footer p {
     .cta-button {
         padding: 10px 20px; /* Ensure button is not too large */
         font-size: 0.85rem;
+    }
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* REMOVED: padding-top: 50px; */
+}
+
+.modal.show {
+    display: flex; /* Use flex to center content when shown */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    /* CHANGED margin for better vertical centering with flex */
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 500px; /* Max width for the modal */
+    width: 90%; /* Responsive width */
+    text-align: center;
+    animation: fadeIn 0.3s ease-out; /* Fade-in animation */
+}
+
+/* Modal Header */
+.modal-content h2 {
+    color: #4CAF50; /* Green for success */
+    font-size: 28px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none; /* Remove border-bottom from modal h2 */
+}
+
+.modal-content h2 i {
+    margin-right: 10px;
+    font-size: 32px;
+}
+
+/* Error specific styling */
+#errorModal .modal-content h2 {
+    color: #f44336; /* Red for error */
+}
+
+/* Close Button */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Modal Body Text */
+.modal-content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Modal Button */
+.modal-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Error modal button styling */
+#errorModal .modal-button {
+    background-color: #f44336; /* Red */
+}
+
+#errorModal .modal-button:hover {
+    background-color: #da190b;
+}
+
+/* Responsive adjustments for smaller screens (for modal) */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 20px;
+        margin: 10% auto; /* Adjust margin for smaller screens */
+    }
+
+    .modal-content h2 {
+        font-size: 24px;
+    }
+
+    .modal-content h2 i {
+        font-size: 28px;
+    }
+
+    .modal-content p {
+        font-size: 16px;
+    }
+
+    .modal-button {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }
