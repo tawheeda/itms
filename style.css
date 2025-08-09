@@ -803,20 +803,37 @@ footer p a:hover {
     margin-right: auto;
 }
 
-.clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    align-items: center;
-    justify-items: center;
+/* New CSS for the scrolling carousel */
+.clients-scroller {
+    overflow: hidden; /* Hides the overflowing logos */
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.clients-scroller-inner {
+    display: flex; /* Arranges the logos in a row */
+    align-items: center;
+    animation: scroll-logos 40s linear infinite; /* Applies the animation */
+    /* Duplicates the entire logo list once for seamless looping */
+    min-width: calc(200% + 220px); 
+}
+
+/* Pause the animation on hover */
+.clients-scroller:hover .clients-scroller-inner {
+    animation-play-state: paused;
+}
+
+.client-logo {
+    flex-shrink: 0; /* Prevents logos from shrinking */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .client-logo img {
     max-width: 100%;
     height: auto;
-    max-height: 80px; /* Adjust as needed */
+    max-height: 80px;
     filter: grayscale(100%);
     opacity: 0.7;
     transition: all 0.3s ease;
@@ -827,6 +844,18 @@ footer p a:hover {
     opacity: 1;
     transform: scale(1.05);
 }
+
+/* Define the animation keyframes */
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0); /* Start at the beginning of the inner container */
+    }
+    100% {
+        /* Scrolls one full set of logos to the left */
+        transform: translateX(calc(-50% - 110px));
+    }
+}
+
 
 /* Optional: Additional container for better spacing on larger screens */
 .container {
