@@ -769,3 +769,101 @@ footer p a:hover {
         font-size: 16px;
     }
 }
+
+/* Styling for the Clients Section */
+.clients-section {
+    text-align: center;
+    background-color: #f7f9fc;
+    padding: 60px 20px;
+}
+
+.clients-section h2 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.clients-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+}
+
+.clients-section p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.client-logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px; /* Adjust as needed */
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Optional: Additional container for better spacing on larger screens */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+ /* Simple popup style */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 1000;
+        }
+        .popup.success { border-left: 5px solid green; }
+        .popup.error { border-left: 5px solid red; }
+        .popup button {
+            margin-top: 10px;
+            padding: 6px 12px;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 999;
+        }
