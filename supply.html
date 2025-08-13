@@ -4,105 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supply & Consultation - InfoTech Managed Solutions</title>
-    	<link href="logo.png" rel="icon">
+    <link href="logo.png" rel="icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="InfoTech Managed Solutions Logo">
-                <h1>InfoTech Managed Solutions</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="sectors.html">Sectors <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="mining.html">Mining</a></li>
-                        <li class= "active"><a href="supply.html" >Supply & Consultation</a></li>
-                        <li><a href="ict.html">IT</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="InfoTech Managed Solutions Logo">
+            <h1>InfoTech Managed Solutions</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="sectors.html">Sectors <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mining.html">Mining</a></li>
+                    <li class="active"><a href="supply.html">Supply & Consultation</a></li>
+                    <li><a href="ict.html">IT</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section class="section">
-            <h2>Industrial Supply & Consultation Services</h2>
-            <p>InfoTech Managed Solutions is your reliable partner for a wide range of industrial supplies and expert consultation. We ensure your projects are equipped with the right components and guided by strategic insights for success.</p>
+<main>
+    <section class="section">
+        <h2>Industrial Supply & Consultation Services</h2>
+        <p>InfoTech Managed Solutions is your reliable partner for a wide range of industrial supplies and expert consultation. We ensure your projects are equipped with the right components and guided by strategic insights for success.</p>
 
-            <h3>Industrial Supplies Offered:</h3>
-            <div class="service-grid">
-                <div class="service-item">
+        <h3>Industrial Supplies Offered:</h3>
+
+        <!-- Give the grid an ID so JS can wire up the interactions -->
+        <div class="service-grid" id="suppliesList">
+
+            <!-- Boiler Tubes -->
+            <div class="service-item supply-item" data-title="Boiler Tubes">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-boiler-tubes">
                     <h3><i class="fas fa-industry"></i> Boiler Tubes</h3>
-                    <p>High-quality tubes essential for various industrial boiler systems.</p>
+                </button>
+                <p class="service-summary">High-quality tubes essential for various industrial boiler systems.</p>
+                <div class="service-panel" id="panel-boiler-tubes" hidden>
+                    <div class="img-grid">
+                        <figure><img src="boiler1.jpg" alt="Boiler tubes example 1"></figure>
+                        <figure><img src="boiler2.jpg" alt="Boiler tubes example 2"></figure>
+                        <figure><img src="boiler3.jpeg" alt="Boiler tubes example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Electrical Motors -->
+            <div class="service-item supply-item" data-title="Electrical Motors">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-motors">
                     <h3><i class="fas fa-cogs"></i> Electrical Motors</h3>
-                    <p>Robust motors for diverse industrial applications, ensuring reliable power.</p>
+                </button>
+                <p class="service-summary">Robust motors for diverse industrial applications, ensuring reliable power.</p>
+                <div class="service-panel" id="panel-motors" hidden>
+                    <div class="img-grid">
+                        <figure><img src="motor1.jpg" alt="Electrical motor example 1"></figure>
+                        <figure><img src="motor2.jpg" alt="Electrical motor example 2"></figure>
+                        <figure><img src="motor3.jpeg" alt="Electrical motor example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Pumps -->
+            <div class="service-item supply-item" data-title="Pumps">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-pumps">
                     <h3><i class="fas fa-water"></i> Pumps</h3>
-                    <p>A variety of pumps for efficient fluid management in industrial settings.</p>
+                </button>
+                <p class="service-summary">A variety of pumps for efficient fluid management in industrial settings.</p>
+                <div class="service-panel" id="panel-pumps" hidden>
+                    <div class="img-grid">
+                        <figure><img src="pumps1.webp" alt="Pump example 1"></figure>
+                        <figure><img src="pumps2.jpg" alt="Pump example 2"></figure>
+                        <figure><img src="pumps3.jpg" alt="Pump example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Gearboxes -->
+            <div class="service-item supply-item" data-title="Gearboxes">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-gearboxes">
                     <h3><i class="fas fa-gear"></i> Gearboxes</h3>
-                    <p>Durable gearboxes for power transmission and speed conversion.</p>
+                </button>
+                <p class="service-summary">Durable gearboxes for power transmission and speed conversion.</p>
+                <div class="service-panel" id="panel-gearboxes" hidden>
+                    <div class="img-grid">
+                        <figure><img src="gearbox1.jpg" alt="Gearbox example 1"></figure>
+                        <figure><img src="gearbox2.jpg" alt="Gearbox example 2"></figure>
+                        <figure><img src="gearbox3.jpg" alt="Gearbox example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Valves -->
+            <div class="service-item supply-item" data-title="Valves">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-valves">
                     <h3><i class="fas fa-valve"></i> Valves</h3>
-                    <p>Precision valves for controlling flow in pipelines and systems.</p>
+                </button>
+                <p class="service-summary">Precision valves for controlling flow in pipelines and systems.</p>
+                <div class="service-panel" id="panel-valves" hidden>
+                    <div class="img-grid">
+                        <figure><img src="valve1.jpg" alt="Valve example 1"></figure>
+                        <figure><img src="valve2.jpg" alt="Valve example 2"></figure>
+                        <figure><img src="valve3.jpg" alt="Valve example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Plant Hire -->
+            <div class="service-item supply-item" data-title="Plant Hire">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-plant-hire">
                     <h3><i class="fas fa-hard-hat"></i> Plant Hire</h3>
-                    <p>Flexible plant and machinery hire options for industrial projects.</p>
+                </button>
+                <p class="service-summary">Flexible plant and machinery hire options for industrial projects.</p>
+                <div class="service-panel" id="panel-plant-hire" hidden>
+                    <div class="img-grid">
+                        <figure><img src="plant1.jpg" alt="Plant hire example 1"></figure>
+                        <figure><img src="plant2.webp" alt="Plant hire example 2"></figure>
+                        <figure><img src="plant3.jpg" alt="Plant hire example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- LP & HP Feed Water Heaters -->
+            <div class="service-item supply-item" data-title="LP & HP Feed Water Heaters">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-feed-heaters">
                     <h3><i class="fas fa-thermometer-half"></i> LP & HP Feed Water Heaters</h3>
-                    <p>Components for optimizing water heating systems in power generation.</p>
+                </button>
+                <p class="service-summary">Components for optimizing water heating systems in power generation.</p>
+                <div class="service-panel" id="panel-feed-heaters" hidden>
+                    <div class="img-grid">
+                        <figure><img src="heater1.jpg" alt="Feed water heater example 1"></figure>
+                        <figure><img src="heater2.png" alt="Feed water heater example 2"></figure>
+                        <figure><img src="heater3.jpeg" alt="Feed water heater example 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Cooling Tower Fill Replacement & Maintenance -->
+            <div class="service-item supply-item" data-title="Cooling Tower Fill Replacement & Maintenance">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-cooling">
                     <h3><i class="fas fa-snowflake"></i> Cooling Tower Fill Replacement & Maintenance</h3>
-                    <p>Expert services to maintain and enhance cooling tower efficiency.</p>
+                </button>
+                <p class="service-summary">Expert services to maintain and enhance cooling tower efficiency.</p>
+                <div class="service-panel" id="panel-cooling" hidden>
+                    <div class="img-grid">
+                        <figure><img src="cooling1.jpeg" alt="Cooling tower maintenance 1"></figure>
+                        <figure><img src="cooling2.jpeg" alt="Cooling tower maintenance 2"></figure>
+                        <figure><img src="cooling3.jpeg" alt="Cooling tower maintenance 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Activated Alumina Supply -->
+            <div class="service-item supply-item" data-title="Activated Alumina Supply">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-alumina">
                     <h3><i class="fas fa-flask"></i> Activated Alumina Supply</h3>
-                    <p>Supply of high-grade activated alumina for drying and purification.</p>
+                </button>
+                <p class="service-summary">Supply of high-grade activated alumina for drying and purification.</p>
+                <div class="service-panel" id="panel-alumina" hidden>
+                    <div class="img-grid">
+                        <figure><img src="alumina1.webp" alt="Activated alumina 1"></figure>
+                        <figure><img src="alumina2.jpeg" alt="Activated alumina 2"></figure>
+                        <figure><img src="alumina3.jpeg" alt="Activated alumina 3"></figure>
+                    </div>
                 </div>
-                <div class="service-item">
+            </div>
+
+            <!-- Epoxy Resin Supply -->
+            <div class="service-item supply-item" data-title="Epoxy Resin Supply">
+                <button class="service-toggle" type="button" aria-expanded="false" aria-controls="panel-epoxy">
                     <h3><i class="fas fa-paint-roller"></i> Epoxy Resin Supply</h3>
-                    <p>Durable epoxy resins for protective coatings and bonding applications.</p>
+                </button>
+                <p class="service-summary">Durable epoxy resins for protective coatings and bonding applications.</p>
+                <div class="service-panel" id="panel-epoxy" hidden>
+                    <div class="img-grid">
+                        <figure><img src="epoxy1.jpeg" alt="Epoxy resin 1"></figure>
+                        <figure><img src="epoxy2.jpeg" alt="Epoxy resin 2"></figure>
+                        <figure><img src="epoxy3.jpeg" alt="Epoxy resin 3"></figure>
+                    </div>
                 </div>
             </div>
 
-            <h3>Consultation Services:</h3>
-            <div class="service-grid">
-                <div class="service-item">
-                    <h3><i class="fas fa-project-diagram"></i> Project Management</h3>
-                    <p>Expert project oversight to ensure successful execution from start to finish.</p>
-                </div>
-                <div class="service-item">
-                    <h3><i class="fas fa-lightbulb"></i> Strategic Consulting</h3>
-                    <p>General guidance and insights for your business and project needs, fostering growth and efficiency.</p>
-                </div>
+        </div><!-- /#suppliesList -->
+
+        <h3>Consultation Services:</h3>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3><i class="fas fa-project-diagram"></i> Project Management</h3>
+                <p>Expert project oversight to ensure successful execution from start to finish.</p>
             </div>
-        </section>
+            <div class="service-item">
+                <h3><i class="fas fa-lightbulb"></i> Strategic Consulting</h3>
+                <p>General guidance and insights for your business and project needs, fostering growth and efficiency.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="section cta-section">
-            <h2>Source Quality Supplies & Expert Advice</h2>
-            <p>Let us streamline your procurement and provide the insights you need for effective project execution.</p>
-            <a href="contact.html" class="cta-button">Discuss Your Supply Needs</a>
-        </section>
-    </main>
+    <section class="section cta-section">
+        <h2>Source Quality Supplies & Expert Advice</h2>
+        <p>Let us streamline your procurement and provide the insights you need for effective project execution.</p>
+        <a href="contact.html" class="cta-button">Discuss Your Supply Needs</a>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2025 InfoTech Managed Solutions. All rights reserved. | Website Developed and maintained by <a href="https://tawheeda.github.io/tawheedaa/"> LT Dev Studio</a></p>
-    </footer>
+<footer>
+    <p>&copy; 2025 InfoTech Managed Solutions. All rights reserved. | Website Developed and maintained by
+        <a href="https://tawheeda.github.io/tawheedaa/">LT Dev Studio</a></p>
+</footer>
+
+<!-- Shared Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__controls">
+    <button class="lb-btn" id="lbClose" aria-label="Close (Esc)"><i class="fas fa-times"></i></button>
+  </div>
+  <button class="lb-btn lb-prev lb-nav" id="lbPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+  <img class="lightbox__img" id="lbImg" alt="">
+  <button class="lb-btn lb-next lb-nav" id="lbNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<!-- Site-wide script -->
+<script src="script.js" defer></script>
 </body>
 </html>
