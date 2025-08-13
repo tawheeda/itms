@@ -270,7 +270,7 @@ footer p a:hover { color: var(--lime-green); }
 }
 
 /* =========================
-   MODAL (sectors.php) + LIGHTBOX (shared)
+   MODAL (sectors) + LIGHTBOX (shared)
    ========================= */
 /* Backdrop container */
 .modal-backdrop {
@@ -327,10 +327,6 @@ footer p a:hover { color: var(--lime-green); }
 .lb-prev { left: .75rem; }
 .lb-next { right: .75rem; }
 
-@media (max-width: 520px) {
-  .img-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 /* =========================
    MINING: FILTER CHIPS & STATE
    ========================= */
@@ -373,36 +369,66 @@ footer p a:hover { color: var(--lime-green); }
 .service-item.is-active h3 i { color: var(--accent); }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE (Desktop-first)
    ========================= */
-@media (max-width: 768px) {
-  .navbar { flex-direction: column; align-items: flex-start; }
+
+/* ===== Tablet & small laptops (≤992px) ===== */
+@media (max-width: 992px) {
+  /* Navbar stacks a bit sooner */
+  .navbar { flex-wrap: wrap; }
   .navbar .logo { margin-bottom: 10px; }
+  .nav-links { gap: 10px; }
+
+  /* Hero scales down */
+  .hero { height: 360px; }
+  .hero-content h1 { font-size: 2.6rem; }
+  .hero-content p { font-size: 1.05rem; }
+
+  /* Grids tighten to two columns where space is limited */
+  .service-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+  .values-container { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+
+  /* Section padding slightly reduced */
+  .section { padding: 24px; }
+  .section h2 { font-size: 2rem; }
+
+  /* Contact blocks relax min-height on tighter screens */
+  .contact-info-block,
+  .contact-form-block { min-height: 480px; }
+}
+
+/* ===== Phones (≤600px) ===== */
+@media (max-width: 600px) {
+  /* Navbar becomes column, dropdowns inline */
+  .navbar { flex-direction: column; align-items: flex-start; }
   .nav-links { flex-direction: column; width: 100%; align-items: flex-start; }
   .nav-links li { margin-left: 0; width: 100%; text-align: center; }
   .dropdown-menu { position: static; box-shadow: none; width: 100%; background: transparent; }
 
-  .hero { height: 300px; }
-  .hero-content h1 { font-size: 2.5rem; }
-  .hero-content p { font-size: 1rem; }
-
-  .service-grid, .values-container { grid-template-columns: 1fr; }
-  .section { padding: 20px; }
-  .section h2 { font-size: 1.8rem; }
-
-  .contact-content-wrapper { flex-direction: column; gap: 20px; }
-  .contact-info-block, .contact-form-block { min-height: unset; }
-  .contact-form .cta-button { align-self: stretch; }
-}
-
-@media (max-width: 480px) {
-  .navbar .logo img { max-height: 50px; }
-  .navbar .logo h1 { font-size: 1.2rem; }
+  /* Hero gets compact */
+  .hero { height: 220px; }
+  .hero-content { padding: 0 10px; }
+  .hero-content h1 { font-size: 1.6rem; line-height: 1.3; margin-bottom: 10px; }
+  .hero-content p { font-size: .85rem; margin-bottom: 14px; }
   .cta-button { padding: 10px 20px; font-size: .9rem; }
 
-  .hero { height: 220px; }
-  .hero-content h1 { font-size: 1.6rem; line-height: 1.3; margin-bottom: 10px; }
-  .hero-content p { font-size: .8rem; margin-bottom: 15px; }
-  .hero-content { padding: 0 10px; }
-  .cta-button { font-size: .85rem; }
+  /* Single-column grids on small phones */
+  .service-grid,
+  .values-container { grid-template-columns: 1fr; }
+
+  .section { padding: 18px; }
+  .section h2 { font-size: 1.7rem; }
+
+  /* Contact layout stacks and removes fixed heights */
+  .contact-content-wrapper { flex-direction: column; gap: 18px; }
+  .contact-info-block,
+  .contact-form-block { min-height: unset; }
+  .contact-form .cta-button { align-self: stretch; }
+
+  /* Image grids: force 2 columns for comfortable tapping */
+  .img-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Logo sizing in tight spaces */
+  .navbar .logo img { max-height: 50px; }
+  .navbar .logo h1 { font-size: 1.2rem; }
 }
